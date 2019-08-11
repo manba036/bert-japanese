@@ -7,3 +7,5 @@ model/*
 !model/.gitkeep
 __pycache__
 .ipynb_checkpoints
+token.txt
+
