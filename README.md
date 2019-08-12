@@ -129,6 +129,7 @@ The following notebook provides the link to Colab notebook where you can run the
 
 - **[pretraining.ipynb](https://github.com/yoheikikuta/bert-japanese/blob/master/notebook/pretraining.ipynb)**
 
+
 ## How to cite this work in papers
 We didn't publish any paper about this work.  
 Please cite this repository in publications as the following:
