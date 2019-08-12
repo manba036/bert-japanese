@@ -5,7 +5,7 @@ This is a repository of Japanese BERT model with SentencePiece tokenizer.
 ## Pretrained models
 We provide pretrained BERT model and trained SentencePiece model for Japanese text.
 Training data is the Japanese wikipedia corpus from [`Wikimedia Downloads`](https://dumps.wikimedia.org/).  
-Please download all objects in the following google drive to `model/` directory.
+Please download all objects in the following google drive to `model/bert-wiki-ja/` directory.
 - **[`Pretrained BERT model and trained SentencePiece model`](https://drive.google.com/drive/folders/1Zsm9DD40lrUVu6iAnIuTH2ODIkh-WM-O?usp=sharing)** 
 
 Loss function during training is as below (after 1M steps the loss function massively changes because `max_seq_length` is changed from `128` to `512`.):
@@ -20,6 +20,10 @@ Loss function during training is as below (after 1M steps the loss function mass
   next_sentence_accuracy = 0.985
   next_sentence_loss = 0.059553143
 ```
+
+## Extract features
+Try the following notebook to check features extraction.  
+- **[check-extract-features.ipynb](https://github.com/manba036/bert-japanese/blob/develop/notebook/check-extract-features.ipynb)**
 
 ## Finetuning with BERT Japanese
 We also provide a simple Japanese text classification problem with [`livedoor ニュースコーパス`](https://www.rondhuit.com/download.html).  
@@ -124,7 +128,6 @@ You need GPU/TPU environment to pretrain a BERT model.
 The following notebook provides the link to Colab notebook where you can run the scripts with TPUs.
 
 - **[pretraining.ipynb](https://github.com/yoheikikuta/bert-japanese/blob/master/notebook/pretraining.ipynb)**
-
 
 ## How to cite this work in papers
 We didn't publish any paper about this work.  
