@@ -26,6 +26,8 @@ Loss function during training is as below (after 1M steps the loss function mass
 Start docker container for jupyter.
 
 ```sh
+git clone --recursive https://github.com/manba036/bert-japanese.git
+cd bert-japanese
 ./run_jupyter_extract-features.sh
 ```
 
