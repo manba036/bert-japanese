@@ -22,8 +22,18 @@ Loss function during training is as below (after 1M steps the loss function mass
 ```
 
 ## Extract features
-Try the following notebook to check features extraction.  
-- **[check-extract-features.ipynb](https://github.com/manba036/bert-japanese/blob/develop/notebook/check-extract-features.ipynb)**
+
+Start docker container for jupyter.
+
+```sh
+./run_jupyter_extract-features.sh
+```
+
+Open jupyter in the browser from <http://127.0.0.1:8888/?token=>*token displayed in terminal*.
+
+Try the following notebook to check features extraction.
+
+- **[bert-japanese/notebook/check-extract-features.ipynb](https://github.com/manba036/bert-japanese/blob/develop/notebook/check-extract-features.ipynb)**
 
 ## Finetuning with BERT Japanese
 We also provide a simple Japanese text classification problem with [`livedoor ニュースコーパス`](https://www.rondhuit.com/download.html).  
