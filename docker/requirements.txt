@@ -1,0 +1,12 @@
+sentencepiece
+tensorflow
+pandas
+fasttext
+gensim
+lightgbm
+matplotlib
+mecab-python3
+neologdn
+seaborn
+sklearn
+tqdm

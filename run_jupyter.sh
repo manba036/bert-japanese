@@ -1,6 +1,7 @@
 #!/bin/sh
 
 mkdir -p ./model/bert-wiki-ja
+mkdir -p ./data/livedoor-news-corpus/model/vector-response-test
 
 if [ ! -e ./model/bert-wiki-ja/graph.pbtxt ]; then
   wget "https://drive.google.com/uc?export=download&id=11V3dT_xJUXsZRuDK1kXiXJRBSEHGl3In" -O ./model/bert-wiki-ja/graph.pbtxt
@@ -28,5 +29,13 @@ if [ ! -e ./model/bert-wiki-ja/wiki-ja.vocab ]; then
   wget "https://drive.google.com/uc?export=download&id=1uzPpW38LcS4YS431GgdG0Hsj4gNgE5X1" -O ./model/bert-wiki-ja/wiki-ja.vocab
 fi
 
-docker build -t extract-features ./docker_extract-features
-docker run --rm -it --name=extract-features -p 8888:8888 -v `pwd`:/work/bert-japanese extract-features
+if [ ! -e "./data/livedoor-news-corpus/dokujo-tsushin" ]; then
+  wget https://www.rondhuit.com/download/ldcc-20140209.tar.gz
+  tar xvfz ldcc-20140209.tar.gz -C ./data/livedoor-news-corpus
+  rm -f ldcc-20140209.tar.gz
+  cp -rf ./data/livedoor-news-corpus/text/* ./data/livedoor-news-corpus/
+  rm -Rf ./data/livedoor-news-corpus/text
+fi
+
+docker build -t bert-japanese-scdv ./docker
+docker run --rm -it --name=bert-japanese-scdv -p 8888:8888 -v `pwd`:/work/bert-japanese bert-japanese-scdv
