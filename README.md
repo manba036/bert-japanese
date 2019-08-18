@@ -21,21 +21,30 @@ Loss function during training is as below (after 1M steps the loss function mass
   next_sentence_loss = 0.059553143
 ```
 
-## Extract features
+## Extract features and text classification of Japanese corpus with SCDV
 
 Start docker container for jupyter.
 
 ```sh
 git clone --recursive https://github.com/manba036/bert-japanese.git
 cd bert-japanese
-./run_jupyter_extract-features.sh
+./run_jupyter.sh
 ```
 
 Open jupyter in the browser from <http://127.0.0.1:8888/?token=>*token displayed in terminal*.
 
 Try the following notebook to check features extraction.
 
-- **[bert-japanese/notebook/check-extract-features.ipynb](https://github.com/manba036/bert-japanese/blob/develop/notebook/check-extract-features.ipynb)**
+- **[bert-japanese/notebook/check-extract-features.ipynb](https://github.com/manba036/bert-japanese/blob/master/notebook/check-extract-features.ipynb)**
+
+Try the following notebook to check text classification of Japanese corpus with SCDV.
+
+- **[bert-japanese/notebook/livedoor-new-corpus-test-origin.ipynb](https://github.com/manba036/bert-japanese/blob/master/notebook/livedoor-new-corpus-test-origin.ipynb)**
+
+Sorry for using Japanese.  
+SCDVによる日本語コーパスのテキスト分類のもろもろについては、fufufukakakaさんの記事が参考になります。  
+
+- **[文書ベクトルをお手軽に高い精度で作れるSCDVって実際どうなのか日本語コーパスで実験した(EMNLP2017)](https://qiita.com/fufufukakaka/items/a7316273908a7c400868)**
 
 ## Finetuning with BERT Japanese
 We also provide a simple Japanese text classification problem with [`livedoor ニュースコーパス`](https://www.rondhuit.com/download.html).  
