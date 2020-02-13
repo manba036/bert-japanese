@@ -2,6 +2,11 @@
 
 mkdir -p ./model/bert-wiki-ja
 mkdir -p ./data/livedoor-news-corpus/model/vector-response-test
+mkdir -p ./data/livedoor/text
+
+if [ ! -e ./data/ldcc-20140209.tar.gz ]; then
+  wget "https://www.rondhuit.com/download/ldcc-20140209.tar.gz" -O ./data/ldcc-20140209.tar.gz
+fi
 
 if [ ! -e ./model/bert-wiki-ja/graph.pbtxt ]; then
   wget "https://drive.google.com/uc?export=download&id=11V3dT_xJUXsZRuDK1kXiXJRBSEHGl3In" -O ./model/bert-wiki-ja/graph.pbtxt
